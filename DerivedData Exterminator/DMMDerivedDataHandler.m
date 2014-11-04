@@ -34,6 +34,14 @@
     }
 }
 
++ (void) clearXCodeCache
+{
+    NSString* path = @"~/Library/Caches/com.apple.dt.Xcode";
+    if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
+        [self removeDirectoryAtPath:path];
+    }
+}
+
 #pragma mark - Private
 
 + (NSString*)derivedDataLocation

@@ -7,5 +7,6 @@
 + (void)clearDerivedDataForProject:(NSString*)projectName;
 + (void)clearAllDerivedData;
 + (void)clearModuleCache;
++ (void)clearXCodeCache;
 
 @end

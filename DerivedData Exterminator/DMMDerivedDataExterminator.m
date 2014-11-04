@@ -62,6 +62,10 @@ static NSString* const DMMDerivedDataExterminatorShowButtonInTitleBar = @"DMMDer
         NSMenuItem* clearModuleCache = [[NSMenuItem alloc] initWithTitle:@"Clear Module Cache" action:@selector(clearModuleCache) keyEquivalent:@""];
         [clearModuleCache setTarget:self];
         [[viewMenuItem submenu] addItem:clearModuleCache];
+        
+        NSMenuItem* clearXCodeCache = [[NSMenuItem alloc] initWithTitle:@"Clear XCode Cache" action:@selector(clearXCodeCache) keyEquivalent:@""];
+        [clearXCodeCache setTarget:self];
+        [[viewMenuItem submenu] addItem:clearXCodeCache];
 
         NSMenuItem* toggleButtonInToolbarItem = [[NSMenuItem alloc] initWithTitle:@"Derived Data Exterminator in Toolbar" action:@selector(toggleButtonInToolbar:) keyEquivalent:@""];
         [toggleButtonInToolbarItem setTarget:self];
@@ -92,6 +96,11 @@ static NSString* const DMMDerivedDataExterminatorShowButtonInTitleBar = @"DMMDer
 - (void)clearModuleCache
 {
     [DMMDerivedDataHandler clearModuleCache];
+}
+
+- (void)clearXCodeCache
+{
+    [DMMDerivedDataHandler clearXCodeCache];
 }
 
 #pragma mark - GUI Management
